@@ -23,7 +23,7 @@ on:
 jobs:
   checkout-code:
     name: Checkout Code
-    runs-on: ubuntu-latest
+    runs-on: [akash, test]
     outputs:
       safe_tag: ${{ steps.branch_tag.outputs.tag }}
     steps:
