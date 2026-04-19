@@ -23,7 +23,7 @@ on:
 jobs:
   checkout-code:
     name: Checkout Code
-    runs-on: [akash, test]
+    runs-on: ubuntu-latest
     outputs:
       safe_tag: ${{ steps.branch_tag.outputs.tag }}
     steps:
@@ -38,7 +38,7 @@ jobs:
 
   build-angular:
     name: Build Angular App
-    runs-on: [akash, test]
+    runs-on: ubuntu-latest
     needs: checkout-code
     steps:
       - uses: actions/checkout@v4
