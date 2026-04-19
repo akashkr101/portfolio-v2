@@ -101,27 +101,27 @@ jobs:
           echo "five"
           ls ./archive
   
-      #Step 3: List down the downloaded build file      
-      - name: List contents to verify artifact location
-        run: |
-          echo "check in all folders"
-          find "$GITHUB_WORKSPACE"
-        shell: bash
-
-      # Step 3: Install rclone (a tool for managing cloud storage) using Chocolatey.
-      - name: Install rclone
-        run: curl https://rclone.org/install.sh | sudo bash
-        
-      # Step 4: Configure rclone using a secret-stored config.
-      - name: Setup Rclone Config
-        run: |
-          mkdir -p ~/.config/rclone
-          echo "${RCLONE_CONFIG_CONTENT}" > ~/.config/rclone/rclone.conf
-        env:
-          RCLONE_CONFIG_CONTENT: ${{ secrets.RCLONE_CONFIG }}
-          
-      #Test rclone in CI
-      - name: List OneDrive root
-        run: rclone lsd onedrive
+ #     #Step 3: List down the downloaded build file      
+ #     - name: List contents to verify artifact location
+ #       run: |
+ #         echo "check in all folders"
+ #         find "$GITHUB_WORKSPACE"
+ #       shell: bash
+ #
+ #     # Step 3: Install rclone (a tool for managing cloud storage) using Chocolatey.
+ #     - name: Install rclone
+ #       run: curl https://rclone.org/install.sh | sudo bash
+ #       
+ #     # Step 4: Configure rclone using a secret-stored config.
+ #     - name: Setup Rclone Config
+ #       run: |
+ #         mkdir -p ~/.config/rclone
+ #         echo "${RCLONE_CONFIG_CONTENT}" > ~/.config/rclone/rclone.conf
+ #       env:
+ #         RCLONE_CONFIG_CONTENT: ${{ secrets.RCLONE_CONFIG }}
+ #         
+ #     #Test rclone in CI
+ #     - name: List OneDrive root
+ #       run: rclone lsd onedrive
 
 
