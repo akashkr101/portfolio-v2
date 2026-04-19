@@ -38,7 +38,7 @@ jobs:
 
   build-angular:
     name: Build Angular App
-    runs-on: ubuntu-latest
+    runs-on: [akash, test]
     needs: checkout-code
     steps:
       - uses: actions/checkout@v4
